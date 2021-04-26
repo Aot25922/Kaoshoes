@@ -1,3 +1,3 @@
-# kaofood
+# kaofood-main
 
-docker compose use for deploy server
+Thai docker-compose use for deploy server
