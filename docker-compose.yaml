@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+  mysql-server:
+    container_name: int221-mysql
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: kaofood
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '3306:3306'
+    networks:
+        - int221-network
+  frontend:
+    container_name: int221-node.js
+    image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
+    ports:
+      - "80:8080"
+    restart: always
+    networks:
+      - int221-network
+    
+  backend:
+    container_name: int221-spring
+    image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
+    ports:
+      - '8081:8081'
+    restart: always
+    networks:
+        - int221-network
+        
+networks:
+    int221-network:
+        driver: bridge
