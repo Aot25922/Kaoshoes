@@ -5,11 +5,20 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: kaofood
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_ROOT_HOST: '%'
     ports:
       - '3306:3306'
+    volumes:
+      - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
+    networks:
+        - int221-network
+  backend:
+    container_name: int221-spring
+    image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
+    ports:
+      - '8080:8080'
+    restart: always
     networks:
         - int221-network
   frontend:
@@ -20,15 +29,6 @@ services:
     restart: always
     networks:
       - int221-network
-    
-  backend:
-    container_name: int221-spring
-    image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
-    ports:
-      - '8080:8080'
-    restart: always
-    networks:
-        - int221-network
         
 networks:
     int221-network:
