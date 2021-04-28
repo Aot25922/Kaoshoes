@@ -2,7 +2,7 @@
 
 Thai docker-compose use for deploy server  
 Server : kaofood.ddns.net
-Mysql : root , mysql
+Mysql : int221 , xt,[A#h+Zf,vMJ;e)8mV
 
 
 # 28 เม.ย. 64
@@ -16,10 +16,11 @@ Back-End
 # เสร็จเเล้ว
 - สามารถส่งข้อมูลไปยังFront-Endได้
 - สร้าง Entity เเละ REST API
+- เชื่อมต่อกับ MySQL แล้ว
 # กำลังทำ
 - กำลังทำMethod POST,PUT,DELETE
-- ลองการเชื่อมกับDatabase
+
 
 DEV-OPS
 # เสร็จเเล้ว
-- สามารถ Deploy งานProjectทั้งหมดได้เเล้ว 
+- สามารถ Deploy งานProjectทั้งหมดได้เเล้ว
