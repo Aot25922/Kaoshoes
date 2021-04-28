@@ -6,7 +6,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql
-      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_HOST: 'localhost'
+      MYSQL_USER: int221
+      MYSQL_PASSWORD: xt,[A#h+Zf,vMJ;e)8mV
     ports:
       - '3306:3306'
     volumes:
@@ -21,7 +23,7 @@ services:
       - '8080:8080'
     restart: always
     links:
-      - "mysql-server:database"
+      - mysql-server:db
     networks:
         - int221-network
   frontend:
@@ -31,7 +33,7 @@ services:
       - "80:80"
     restart: always
     links:
-      - "backend:backend"
+      - backend
     networks:
       - int221-network
         

@@ -1,5 +1,6 @@
 -- MySQL Workbench Forward Engineering
 
+GRANT ALL ON *.* to 'int221'@'%' WITH GRANT OPTION;
 CREATE DATABASE IF NOT EXISTS `kaofood`;
 USE `kaofood` ;
 
