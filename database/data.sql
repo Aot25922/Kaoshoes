@@ -1,4 +1,4 @@
-USE `9Food` ;
+USE `kaofood` ;
 insert into Category(CateId,CateName) values (1,'food');
 insert into Size(SizeId,SizeValue) values (1,'xl');
 insert into Size(SizeId,SizeValue) values (2,'l');

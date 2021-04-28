@@ -1,26 +1,14 @@
 -- MySQL Workbench Forward Engineering
-
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema 9Food
--- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `9Food` ;
-
--- -----------------------------------------------------
--- Schema 9Food
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `9Food` DEFAULT CHARACTER SET utf8 ;
-USE `9Food` ;
+DROP DATABASE `kaofood`;
+CREATE DATABASE `kaofood`;
+USE `kaofood` ;
 
 -- -----------------------------------------------------
 -- Table `9Food`.`Order`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9Food`.`Order` ;
+DROP TABLE IF EXISTS `Order` ;
 
-CREATE TABLE IF NOT EXISTS `9Food`.`Order` (
+CREATE TABLE IF NOT EXISTS `Order` (
   `OrderId` INT NOT NULL,
   `CusName` VARCHAR(10) NULL,
   `Manuface` DATE NOT NULL,
@@ -31,9 +19,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `9Food`.`Category`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9Food`.`Category` ;
+DROP TABLE IF EXISTS `Category` ;
 
-CREATE TABLE IF NOT EXISTS `9Food`.`Category` (
+CREATE TABLE IF NOT EXISTS `Category` (
   `CateId` INT NOT NULL,
   `CateName` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`CateId`))
@@ -43,9 +31,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `9Food`.`Menu`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9Food`.`Menu` ;
+DROP TABLE IF EXISTS `Menu` ;
 
-CREATE TABLE IF NOT EXISTS `9Food`.`Menu` (
+CREATE TABLE IF NOT EXISTS `Menu` (
   `MenuId` INT NOT NULL,
   `MenuName` VARCHAR(45) NOT NULL,
   `Descript` VARCHAR(45) NOT NULL,
@@ -66,9 +54,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `9Food`.`Orderdetail`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9Food`.`Orderdetail` ;
+DROP TABLE IF EXISTS `Orderdetail` ;
 
-CREATE TABLE IF NOT EXISTS `9Food`.`Orderdetail` (
+CREATE TABLE IF NOT EXISTS `Orderdetail` (
   `OrderId` INT NOT NULL,
   `MenuId` INT NOT NULL,
   PRIMARY KEY (`OrderId`, `MenuId`),
@@ -90,9 +78,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `9Food`.`Size`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9Food`.`Size` ;
+DROP TABLE IF EXISTS `Size` ;
 
-CREATE TABLE IF NOT EXISTS `9Food`.`Size` (
+CREATE TABLE IF NOT EXISTS `Size` (
   `SizeId` INT NOT NULL,
   `SizeValue` VARCHAR(3) NOT NULL,
   PRIMARY KEY (`SizeId`),
@@ -103,9 +91,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `9Food`.`Menu_has_Size`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9Food`.`Menu_has_Size` ;
+DROP TABLE IF EXISTS `Menu_has_Size` ;
 
-CREATE TABLE IF NOT EXISTS `9Food`.`Menu_has_Size` (
+CREATE TABLE IF NOT EXISTS `Menu_has_Size` (
   `MenuId` INT NOT NULL,
   `SizeId` INT NOT NULL,
   PRIMARY KEY (`MenuId`, `SizeId`),
@@ -122,9 +110,3 @@ CREATE TABLE IF NOT EXISTS `9Food`.`Menu_has_Size` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
