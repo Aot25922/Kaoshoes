@@ -1,6 +1,6 @@
 -- MySQL Workbench Forward Engineering
-DROP DATABASE `kaofood`;
-CREATE DATABASE `kaofood`;
+
+CREATE DATABASE IF NOT EXISTS `kaofood`;
 USE `kaofood` ;
 
 -- -----------------------------------------------------
