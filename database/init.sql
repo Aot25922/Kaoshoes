@@ -21,10 +21,10 @@ USE `9Food` ;
 DROP TABLE IF EXISTS `9Food`.`Order` ;
 
 CREATE TABLE IF NOT EXISTS `9Food`.`Order` (
-  `OrderId` INT NOT NULL,
+  `OrderNum` INT NOT NULL,
   `CusName` VARCHAR(10) NULL,
   `Manuface` DATE NOT NULL,
-  PRIMARY KEY (`OrderId`))
+  PRIMARY KEY (`OrderNum`))
 ENGINE = InnoDB;
 
 
@@ -34,9 +34,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `9Food`.`Category` ;
 
 CREATE TABLE IF NOT EXISTS `9Food`.`Category` (
-  `CateId` INT NOT NULL,
-  `CateName` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`CateId`))
+  `Id` INT NOT NULL,
+  `Name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id`))
 ENGINE = InnoDB;
 
 
@@ -46,18 +46,18 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `9Food`.`Menu` ;
 
 CREATE TABLE IF NOT EXISTS `9Food`.`Menu` (
-  `MenuId` INT NOT NULL,
-  `MenuName` VARCHAR(45) NOT NULL,
+  `Id` INT NOT NULL,
+  `Name` VARCHAR(45) NOT NULL,
   `Descript` VARCHAR(45) NOT NULL,
   `Costl` DOUBLE NOT NULL,
-  `Price` VARCHAR(45) NOT NULL,
+  `Price` DOUBLE NOT NULL,
   `Image_Path` VARCHAR(100) NOT NULL,
   `CateId` INT NOT NULL,
-  PRIMARY KEY (`MenuId`, `CateId`),
+  PRIMARY KEY (`Id`),
   INDEX `fk_Menu_Category_idx` (`CateId` ASC) VISIBLE,
   CONSTRAINT `fk_Menu_Category`
     FOREIGN KEY (`CateId`)
-    REFERENCES `9Food`.`Category` (`CateId`)
+    REFERENCES `9Food`.`Category` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -71,18 +71,17 @@ DROP TABLE IF EXISTS `9Food`.`Orderdetail` ;
 CREATE TABLE IF NOT EXISTS `9Food`.`Orderdetail` (
   `OrderId` INT NOT NULL,
   `MenuId` INT NOT NULL,
-  `CateId` INT NOT NULL,
-  PRIMARY KEY (`OrderId`, `MenuId`, `CateId`),
+  PRIMARY KEY (`OrderId`, `MenuId`),
   INDEX `fk_Orderdetail_Order1_idx` (`OrderId` ASC) VISIBLE,
-  INDEX `fk_Orderdetail_Menu1_idx` (`MenuId` ASC, `CateId` ASC) VISIBLE,
+  INDEX `fk_Orderdetail_Menu1_idx` (`MenuId` ASC) VISIBLE,
   CONSTRAINT `fk_Orderdetail_Order1`
     FOREIGN KEY (`OrderId`)
-    REFERENCES `9Food`.`Order` (`OrderId`)
+    REFERENCES `9Food`.`Order` (`OrderNum`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Orderdetail_Menu1`
-    FOREIGN KEY (`MenuId` , `CateId`)
-    REFERENCES `9Food`.`Menu` (`MenuId` , `CateId`)
+    FOREIGN KEY (`MenuId`)
+    REFERENCES `9Food`.`Menu` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -94,9 +93,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `9Food`.`Size` ;
 
 CREATE TABLE IF NOT EXISTS `9Food`.`Size` (
-  `SizeId` INT NOT NULL,
-  `Size` CHAR(1) NOT NULL,
-  PRIMARY KEY (`SizeId`),
+  `Id` INT NOT NULL,
+  `Size` VARCHAR(3) NOT NULL,
+  PRIMARY KEY (`Id`),
   UNIQUE INDEX `Size_UNIQUE` (`Size` ASC) VISIBLE)
 ENGINE = InnoDB;
 
@@ -108,19 +107,18 @@ DROP TABLE IF EXISTS `9Food`.`Menu_has_Size` ;
 
 CREATE TABLE IF NOT EXISTS `9Food`.`Menu_has_Size` (
   `MenuId` INT NOT NULL,
-  `CateId` INT NOT NULL,
   `SizeId` INT NOT NULL,
-  PRIMARY KEY (`MenuId`, `CateId`, `SizeId`),
+  PRIMARY KEY (`MenuId`, `SizeId`),
   INDEX `fk_Menu_has_Size_Size1_idx` (`SizeId` ASC) VISIBLE,
-  INDEX `fk_Menu_has_Size_Menu1_idx` (`MenuId` ASC, `CateId` ASC) VISIBLE,
+  INDEX `fk_Menu_has_Size_Menu1_idx` (`MenuId` ASC) VISIBLE,
   CONSTRAINT `fk_Menu_has_Size_Menu1`
-    FOREIGN KEY (`MenuId` , `CateId`)
-    REFERENCES `9Food`.`Menu` (`MenuId` , `CateId`)
+    FOREIGN KEY (`MenuId`)
+    REFERENCES `9Food`.`Menu` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Menu_has_Size_Size1`
     FOREIGN KEY (`SizeId`)
-    REFERENCES `9Food`.`Size` (`SizeId`)
+    REFERENCES `9Food`.`Size` (`Id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
