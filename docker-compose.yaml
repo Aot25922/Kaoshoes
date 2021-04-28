@@ -19,6 +19,8 @@ services:
     ports:
       - '8080:8080'
     restart: always
+    links:
+      - "mysql-server:database"
     networks:
         - int221-network
   frontend:
@@ -27,6 +29,8 @@ services:
     ports:
       - "80:80"
     restart: always
+    links:
+      - "backend:backend"
     networks:
       - int221-network
         
