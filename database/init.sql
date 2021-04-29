@@ -1,6 +1,7 @@
 -- MySQL Workbench Forward Engineering
 
 GRANT ALL ON *.* to 'int221'@'%' WITH GRANT OPTION;
+DROP DATABASE IF EXISTS `kaofood`;
 CREATE DATABASE IF NOT EXISTS `kaofood`;
 USE `kaofood` ;
 
@@ -37,7 +38,7 @@ DROP TABLE IF EXISTS `Menu` ;
 CREATE TABLE IF NOT EXISTS `Menu` (
   `MenuId` INT NOT NULL AUTO_INCREMENT,
   `MenuName` VARCHAR(45) NOT NULL,
-  `Descript` VARCHAR(45) NOT NULL,
+  `Descript` VARCHAR(500) NOT NULL,
   `Cost` DOUBLE NOT NULL,
   `Price` DOUBLE NOT NULL,
   `ImagePath` VARCHAR(100) NOT NULL,
@@ -83,7 +84,7 @@ DROP TABLE IF EXISTS `Size` ;
 
 CREATE TABLE IF NOT EXISTS `Size` (
   `SizeId` INT NOT NULL,
-  `SizeValue` VARCHAR(8) NOT NULL,
+  `SizeValue` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`SizeId`),
   UNIQUE INDEX `Size_UNIQUE` (`SizeValue` ASC) VISIBLE)
 ENGINE = InnoDB;
