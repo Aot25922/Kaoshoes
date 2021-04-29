@@ -1,10 +1,8 @@
 USE `kaofood` ;
-insert into Category(CateId,CateName) values (1,'Main Course');
-insert into Category(CateId,CateName) values (2,'Beverage');
-insert into Category(CateId,CateName) values (3,'Dessert');
-insert into Size(SizeId,SizeValue) values (1,'xl');
-insert into Size(SizeId,SizeValue) values (2,'l');
-insert into Size(SizeId,SizeValue) values (3,'sl');
+insert into Category(CateId,CateName) values (1,'food');
+insert into Size(SizeId,SizeValue) values (1,'Jumbo');
+insert into Size(SizeId,SizeValue) values (2,'For Adult');
+insert into Size(SizeId,SizeValue) values (3,'For Kid');
 insert into Menu(MenuId,MenuName,Descript,Cost,Price,ImagePath,CateId) values (1,'Steak','Nice Meat',200.50,250,'test',1);
 insert into Menu(MenuId,MenuName,Descript,Cost,Price,ImagePath,CateId) values (2,'Curry','Just Curry',300.56,350,'test2',1);
 insert into Menu_has_Size(sizeid,menuid) values (1,1);
