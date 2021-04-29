@@ -1,7 +1,6 @@
 USE `kaofood` ;
-insert into Category(CateId,CateName) values (1,'Main Menu');
-insert into Category(CateId,CateName) values (2,'Beverage');
-insert into Category(CateId,CateName) values (3,'Dessert');
+insert into Category(CateId,CateName) values (1,'Beverage');
+insert into Category(CateId,CateName) values (2,'Dessert');
 insert into Size(SizeId,SizeValue) values (1,'Jumbo');
 insert into Size(SizeId,SizeValue) values (2,'For Adult');
 insert into Size(SizeId,SizeValue) values (3,'For Kid');
