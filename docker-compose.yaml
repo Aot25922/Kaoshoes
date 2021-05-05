@@ -1,49 +1,49 @@
 version: '3.3'
 services:
-  # mysql:
-  #   container_name: int221-mysql
-  #   image: mysql:latest
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: mysql
-  #     MYSQL_ROOT_HOST: 'localhost'
-  #     MYSQL_USER: int221
-  #     MYSQL_PASSWORD: xt,[A#h+Zf,vMJ;e)8mV
-  #   ports:
-  #     - '3306:3306'
-  #   volumes:
-  #     - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
-  #     - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
-  #   networks:
-  #       - int221-network
-  # spring:
-  #   container_name: int221-spring
-  #   image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
-  #   ports:
-  #     - '8080:8080'
-  #   restart: always
-  #   links:
-  #     - mysql:database
-  #   networks:
-  #       - int221-network
-  # nodejs:
-  #   container_name: int221-node.js
-  #   image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
-  #   restart: always
-  #   links:
-  #     - spring
-  #   networks:
-  #     - int221-network
+  mysql:
+    container_name: int221-mysql
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_ROOT_HOST: 'localhost'
+      MYSQL_USER: int221
+      MYSQL_PASSWORD: xt,[A#h+Zf,vMJ;e)8mV
+    ports:
+      - '3306:3306'
+    volumes:
+      - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
+    networks:
+        - int221-network
+  spring:
+    container_name: int221-spring
+    image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
+    ports:
+      - '8080:8080'
+    restart: always
+    links:
+      - mysql:database
+    networks:
+        - int221-network
+  nodejs:
+    container_name: int221-node.js
+    image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
+    restart: always
+    links:
+      - spring
+    networks:
+      - int221-network
   web:
     image: nginx:alpine
     container_name: int221-nginx
     ports:
-      - "80:80"
-    # links:
-    #   - nodejs
+      - "443:443"
+    links:
+      - nodejs
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/517CB4301E88BE95BD94211E46137608.txt:/usr/share/nginx/html/.well-known/pki-validation/517CB4301E88BE95BD94211E46137608.txt
+      - ./nginx/zerossl:/etc/ssl
     networks:
       - int221-network
         
