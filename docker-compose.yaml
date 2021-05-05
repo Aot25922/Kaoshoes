@@ -18,10 +18,12 @@ services:
     container_name: int221-spring
     image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
     restart: always
+    ports:
+      - "8080:8080"
     links:
       - mysql:database
     networks:
-        - int221-network
+      - int221-network
   nodejs:
     container_name: int221-node.js
     image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
