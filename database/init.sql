@@ -40,7 +40,6 @@ CREATE TABLE IF NOT EXISTS `Menu` (
   `MenuName` VARCHAR(45) NOT NULL,
   `Descript` VARCHAR(500) NOT NULL,
   `Cost` DOUBLE NOT NULL,
-  `Price` DOUBLE NOT NULL,
   `ImagePath` VARCHAR(100) NOT NULL,
   `CateId` INT NOT NULL,
   PRIMARY KEY (`MenuId`),
@@ -98,6 +97,7 @@ DROP TABLE IF EXISTS `Menu_has_Size` ;
 CREATE TABLE IF NOT EXISTS `Menu_has_Size` (
   `MenuId` INT NOT NULL,
   `SizeId` INT NOT NULL,
+  `Price`  DOUBLE NOT NULL,
   PRIMARY KEY (`MenuId`, `SizeId`),
   INDEX `fk_Menu_has_Size_Size1_idx` (`SizeId` ASC) VISIBLE,
   INDEX `fk_Menu_has_Size_Menu1_idx` (`MenuId` ASC) VISIBLE,
