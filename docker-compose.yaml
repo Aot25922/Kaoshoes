@@ -9,8 +9,6 @@ services:
       MYSQL_ROOT_HOST: 'localhost'
       MYSQL_USER: int221
       MYSQL_PASSWORD: xt,[A#h+Zf,vMJ;e)8mV
-    ports:
-      - '3306:3306'
     volumes:
       - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
       - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
@@ -19,8 +17,6 @@ services:
   spring:
     container_name: int221-spring
     image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
-    ports:
-      - '8080:8080'
     restart: always
     links:
       - mysql:database
