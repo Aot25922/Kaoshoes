@@ -21,7 +21,7 @@ services:
     image: ghcr.io/int221-31-33-43/kaofood_back-end:latest
     restart: always
     ports:
-      - "8080:8080"
+      - "8443:8443"
     links:
       - mysql:database
     networks:
