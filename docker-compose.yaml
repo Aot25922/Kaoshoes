@@ -25,8 +25,7 @@ services:
     links:
       - mysql:database
     networks:
-      int221-network:
-        ipv4_address: 172.16.0.101
+      - int221-network
   nodejs:
     container_name: int221-node.js
     image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
@@ -52,6 +51,3 @@ services:
 networks:
     int221-network:
       driver: bridge
-      ipam:
-        config:
-          - subnet: 172.16.0.0/24
