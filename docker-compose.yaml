@@ -51,7 +51,7 @@ services:
         
 networks:
     int221-network:
-      driver: default
+      driver: bridge
       ipam:
         config:
           - subnet: 172.16.0.0/24
