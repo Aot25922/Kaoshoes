@@ -45,9 +45,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `9shoes`.`Product` ;
 
 CREATE TABLE IF NOT EXISTS `9shoes`.`Product` (
-  `ProductId` INT NOT NULL,
+  `ProductId` INT NOT NULL AUTO_INCREMENT,
   `ProductName` VARCHAR(45) NOT NULL,
-  `Descript` VARCHAR(500) NOT NULL,
+  `Descript` VARCHAR(800) NOT NULL,
   `Price` DOUBLE NOT NULL,
   `ImagePath` VARCHAR(100) NOT NULL,
   `ManuDate` DATE NOT NULL,
