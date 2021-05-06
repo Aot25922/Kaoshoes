@@ -52,6 +52,7 @@ services:
 networks:
     int221-network:
         driver: bridge
+        external: true
         ipam:
           config:
             - subnet: 172.16.0.0/24
