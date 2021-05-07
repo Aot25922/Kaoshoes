@@ -22,15 +22,15 @@ services:
     restart: always
     ports:
       - "8443:8443"
-    links:
-      - mysql:database
+    depends_on:
+      - mysql
     networks:
       - int221-network
   nodejs:
     container_name: int221-node.js
     image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
     restart: always
-    links:
+    depends_on:
       - spring
     networks:
       - int221-network
@@ -40,7 +40,7 @@ services:
     ports:
       - "443:443"
       - "80:80"
-    links:
+    depends_on:
       - nodejs
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
