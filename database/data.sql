@@ -62,3 +62,5 @@ insert into Product_has_Size(SizeId,ProductId) values (15,16);
 insert into Product_has_Size(SizeId,ProductId) values (1,17);
 insert into Product_has_Size(SizeId,ProductId) values (1,18);
 insert into Product_has_Size(SizeId,ProductId) values (2,18);
+
+commit;
