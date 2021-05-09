@@ -3,7 +3,6 @@
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-GRANT ALL ON *.* to 'int221'@'%' WITH GRANT OPTION;
 
 -- -----------------------------------------------------
 -- Schema 9shoes
@@ -17,18 +16,6 @@ CREATE SCHEMA IF NOT EXISTS `9shoes` DEFAULT CHARACTER SET utf8 ;
 USE `9shoes` ;
 
 -- -----------------------------------------------------
--- Table `9shoes`.`Order`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `9shoes`.`Order` ;
-
-CREATE TABLE IF NOT EXISTS `9shoes`.`Order` (
-  `OrderId` INT NOT NULL,
-  `CusName` VARCHAR(10) NULL,
-  PRIMARY KEY (`OrderId`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `9shoes`.`Brand`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `9shoes`.`Brand` ;
@@ -38,7 +25,6 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Brand` (
   `BrandName` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`BrandId`))
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `9shoes`.`Product`
@@ -62,31 +48,6 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Product` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `9shoes`.`Orderdetail`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `9shoes`.`Orderdetail` ;
-
-CREATE TABLE IF NOT EXISTS `9shoes`.`Orderdetail` (
-  `OrdertId` INT NOT NULL,
-  `ProductId` INT NOT NULL,
-  PRIMARY KEY (`OrdertId`, `ProductId`),
-  INDEX `fk_Orderdetail_Order1_idx` (`OrdertId` ASC) VISIBLE,
-  INDEX `fk_Orderdetail_Menu1_idx` (`ProductId` ASC) VISIBLE,
-  CONSTRAINT `fk_Orderdetail_Order1`
-    FOREIGN KEY (`OrdertId`)
-    REFERENCES `9shoes`.`Order` (`OrderId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Orderdetail_Menu1`
-    FOREIGN KEY (`ProductId`)
-    REFERENCES `9shoes`.`Product` (`ProductId`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
 -- -----------------------------------------------------
 -- Table `9shoes`.`Size`
 -- -----------------------------------------------------
@@ -98,7 +59,6 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Size` (
   PRIMARY KEY (`SizeId`),
   UNIQUE INDEX `SizeValue_UNIQUE` (`SizeValue` ASC) VISIBLE)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `9shoes`.`Product_has_Size`
@@ -122,7 +82,6 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Product_has_Size` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
