@@ -1,66 +1,29 @@
 USE `9shoes` ;
-insert into Brand(BrandId,BrandName) values (1,'Nike');
-insert into Brand(BrandId,BrandName) values (2,'Adidas');
-insert into Brand(BrandId,BrandName) values (3,'Converse');
-insert into Size(SizeId,SizeValue) values (1,'EU 40');
-insert into Size(SizeId,SizeValue) values (2,'EU 40.5');
-insert into Size(SizeId,SizeValue) values (3,'EU 41');
-insert into Size(SizeId,SizeValue) values (4,'EU 41.5');
-insert into Size(SizeId,SizeValue) values (5,'EU 42');
-insert into Size(SizeId,SizeValue) values (6,'EU 42.5');
-insert into Size(SizeId,SizeValue) values (7,'EU 43');
-insert into Size(SizeId,SizeValue) values (8,'EU 43.5');
-insert into Size(SizeId,SizeValue) values (9,'EU 44');
-insert into Size(SizeId,SizeValue) values (10,'EU 44.5');
-insert into Size(SizeId,SizeValue) values (11,'EU 45');
-insert into Size(SizeId,SizeValue) values (12,'EU 45.5');
-insert into Size(SizeId,SizeValue) values (13,'EU 46');
-insert into Size(SizeId,SizeValue) values (14,'EU 46.5');
-insert into Size(SizeId,SizeValue) values (15,'EU 47');
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (1,'Nike Air Max 90 SE','Nike Air Max 90 SE, following in the footsteps of the OG model, it is a new step towards the future. No other pair is more comfortable and proven than this one.The shoes are made with at least 20% recycled material by weight, 9% cork is used in the signature waffle outsole. The overlay is sewn with 100% recycled denim and embroidered vegetation graphics, along with Max Air cushioning to enhance travel comfort.',5000,'test','2021-03-02-',1);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (2,'Nike Air Force 1 ''07 EMB','Joy lives in the Nike Air Force 1 '' 07 EMB, an iconic basketball shoe that brings the Sports Specialties to what you know best. The stitched overlay, eye-catching colors and the perfect sparkle that will make your Swoosh shine. The textured and back panel, combined with the embroidered "NIKE" lettering, is a play on your favorite team''s hat. While branding the fresh Sports Specialties adds to the ''90s look that has become legendary with hip-hop culture.',3800,'test','2020-12-30',1);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (3,'YEEZY SLIDE','YEEZY SLIDE',2100,'test','2020-04-01',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (4,'4D FUSIO SHOES','The future is here. Lace into these bold running-inspired shoes and embrace it. Their digitally printed adidas 4D midsole is precision crafted with light, oxygen and liquid resin for controlled energy return. An adidas Primeknit upper and a crisscross lacing system add foot-hugging comfort. Bright colours stand out along the way.',7300,'test','2020-03-21',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (5,'RUN STAR HIKE PLATFORM COLOR OX','RUN STAR HIKE PLATFORM COLOR OX',2990,'test','2021-04-10',3);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (6,'RUN STAR HIKE PLATFORM COLOR HI','RUN STAR HIKE PLATFORM COLOR HI',3190,'test','2021-04-26',3);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (7,'ALL STAR CX PULL TAB OX','ALL STAR CX PULL TAB OX',3190,'test','2021-01-02',3);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (8,'ALL STAR CX PULL TAB HI','ALL STAR CX PULL TAB HI',3390,'test','2021-01-16',3);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (9,'ULTRABOOST 6.0 DNA X PARLEY SHOES','Every run is a chance to push your boundaries. We approach each version of the Ultraboost with the same mentality. These adidas running shoes are made with the oceans in mind. The adidas Primeknit upper is built with Primeblue, and the cage plus heel counter are made with recycled fishing nets. Wear these everyday trainers for a stroll along the boardwalk or while picking up trash on the shore.',6000,'test','2021-04-06',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (10,'ULTRABOOST 21 PRIMEBLUE SHOES','The definition of best never rests. When we dropped the first adidas Ultraboosts, they were the best running shoes we ever made. With each new update, we raise the bar. Now you get the cushioning you did not know you needed with the energy return you have always wanted. This version features 6% more Boost capsules and a supportive adidas Primeknit+ upper. It gives you an extra push of energy in each step that comes from the Linear Energy Push system, which offers forefoot and midfoot support.',6500,'test','2021-05-01',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (11,'SUPERSTAR THE SIMPSONS SQUISHEE SHOES','A Squishee-inspired design on the adidas Superstar shoes. A lace jewel honours the favourite beverage, and the sockliner calls out the Kwik-E-Mart. A transparent tongue completes the look.',3200,'test','2021-04-20',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (12,'ULTRABOOST 6.0 DNA SHOES','Every run is a chance to push your boundaries. We approach each version of the Ultraboost with the same mentality. These adidas running shoes are made with the oceans in mind. The adidas Primeknit upper is built with Primeblue, and the cage plus heel counter are made with recycled fishing nets. Wear these everyday trainers for a stroll along the boardwalk or while picking up trash on the shore.',6000,'test','2021-04-15',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (13,'Nike Air Max 95 SE','Nike Air Max 95 SE, taking inspiration from the human body and the aesthetics of ''90s track style, this shoe has an incredible combination of comfort. A style that everyone has to look at And an eco-friendly design, the unique side panels are made with recycled denim and mesh. Considered to now contain at least 20% recycled content by weight, the embroidered cork graphic on the tongue pays tribute to the plants used in the Air design. Visible designs in the heel and forefoot cushion every stride.',6100,'test','2021-05-05',1);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (14,'Nike Air Force 1 ''07 LV8','Nike Air Force 1 ''07 LV8, updated with the original ''82 shoe, inspired by basketball, with at least 20% recycled material by weight and a cork-based outsole. By adding a natural flair to the classic version we all know and love with a pomegranate pattern composed of plant dyes. Embroidered vegetation design And scientific infographics',3800,'test','2021-05-01',1);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (15,'Air Jordan 1 Mid','The Air Jordan 1 Mid is inspired by the first AJ1 and gives retro Jordan fans the opportunity to follow in the footsteps of their greatness. Bright colors add clean parts of classic materials and add some freshness to familiar designs.',4200,'test','2021-03-02',1);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (16,'Nike Waffle One','Nike Waffle One put everything you love most in Nike''s legendary running shoes together through innovative innovations. To create a new look for the iconic Waffle franchise, a new durable plastic heel headband delivers power While the transparent mesh mixed with dripping suede will keep you ready for the summer, the new springy midsole stands out with a classic chunky silhouette. And a revamped waffle outsole that offers unbelievable levels of support and traction until you try it.',3600,'test','2021-05-06',1);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (17,'ULTRABOOST 21 X PARLEY SHOES','Raise your own bar. That''s what adidas did when we updated the legendary Ultraboost running shoes with even more energy-returning benefits than before. The responsive Boost midsole, foot-hugging upper and grippy yet flexible sole are still here. Now, a Linear Energy Push system gives extra propulsion to each step with increased forefoot and midfoot stiffness. This version is made using recycled materials, part of adidas commitment to help end plastic waste. This product is made with Primeblue, a high-performance recycled material made in part with Parley Ocean Plastic. 50% of the upper is textile, 92% of the textile is Primeblue yarn. No virgin polyester.',6500,'test','2021-05-01',2);
-insert into Product(ProductId,ProductName,Descript,Price,ImagePath,ManuDate,BrandId) values (18,'AS DISRUPT CX STRETCH CANVAS HI','AS DISRUPT CX STRETCH CANVAS HI',4500,'test','2021-05-06',3);
-insert into Product_has_Size(SizeId,ProductId) values (1,1);
-insert into Product_has_Size(SizeId,ProductId) values (1,2);
-insert into Product_has_Size(SizeId,ProductId) values (1,3);
-insert into Product_has_Size(SizeId,ProductId) values (1,4);
-insert into Product_has_Size(SizeId,ProductId) values (2,1);
-insert into Product_has_Size(SizeId,ProductId) values (2,2);
-insert into Product_has_Size(SizeId,ProductId) values (2,3);
-insert into Product_has_Size(SizeId,ProductId) values (3,4);
-insert into Product_has_Size(SizeId,ProductId) values (3,5);
-insert into Product_has_Size(SizeId,ProductId) values (4,3);
-insert into Product_has_Size(SizeId,ProductId) values (4,4);
-insert into Product_has_Size(SizeId,ProductId) values (4,6);
-insert into Product_has_Size(SizeId,ProductId) values (5,1);
-insert into Product_has_Size(SizeId,ProductId) values (6,3);
-insert into Product_has_Size(SizeId,ProductId) values (6,7);
-insert into Product_has_Size(SizeId,ProductId) values (7,8);
-insert into Product_has_Size(SizeId,ProductId) values (8,9);
-insert into Product_has_Size(SizeId,ProductId) values (9,10);
-insert into Product_has_Size(SizeId,ProductId) values (10,11);
-insert into Product_has_Size(SizeId,ProductId) values (11,12);
-insert into Product_has_Size(SizeId,ProductId) values (12,13);
-insert into Product_has_Size(SizeId,ProductId) values (13,14);
-insert into Product_has_Size(SizeId,ProductId) values (14,15);
-insert into Product_has_Size(SizeId,ProductId) values (15,16);
-insert into Product_has_Size(SizeId,ProductId) values (1,17);
-insert into Product_has_Size(SizeId,ProductId) values (1,18);
-insert into Product_has_Size(SizeId,ProductId) values (2,18);
+INSERT INTO `Brand` VALUES (1,'Nike'),(2,'Adidas'),(3,'Converse');
+
+INSERT INTO `Size` VALUES (1,'EU 40'),(2,'EU 40.5'),(3,'EU 41'),(4,'EU 41.5'),(5,'EU 42'),(6,'EU 42.5'),(7,'EU 43'),
+(8,'EU 43.5'),(9,'EU 44'),(10,'EU 44.5'),(11,'EU 45'),(12,'EU 45.5'),(13,'EU 46'),(14,'EU 46.5'),(15,'EU 47');
+
+INSERT INTO `Product` VALUES (1,'Nike Air Max 90 SE','Nike Air Max 90 SE, following in the footsteps of the OG model, it is a new step towards the future. No other pair is more comfortable and proven than this one.The shoes are made with at least 20% recycled material by weight, 9% cork is used in the signature waffle outsole. The overlay is sewn with 100% recycled denim and embroidered vegetation graphics, along with Max Air cushioning to enhance travel comfort.',5000,'./storage/image/Nike Air Max 90 SE.jpg','2021-02-15',1),
+(2,'Nike Air Force 1 \'07 EMB','Joy lives in the Nike Air Force 1 \' 07 EMB, an iconic basketball shoe that brings the Sports Specialties to what you know best. The stitched overlay, eye-catching colors and the perfect sparkle that will make your Swoosh shine. The textured and back panel, combined with the embroidered \"NIKE\" lettering, is a play on your favorite team\'s hat. While branding the fresh Sports Specialties adds to the \'90s look that has become legendary with hip-hop culture.',3800,'./storage/image/Nike Air Force 1 \'07 EMB.jpg','2020-12-15',1),
+(3,'YEEZY SLIDE','YEEZY SLIDE',2100,'./storage/image/YEEZY SLIDE.jpg','2020-03-24',2),
+(4,'4D FUSIO SHOES','The future is here. Lace into these bold running-inspired shoes and embrace it. Their digitally printed adidas 4D midsole is precision crafted with light, oxygen and liquid resin for controlled energy return. An adidas Primeknit upper and a crisscross lacing system add foot-hugging comfort. Bright colours stand out along the way.',7300,'./storage/image/4D FUSIO SHOES.jpg','2020-03-20',2),
+(5,'RUN STAR HIKE PLATFORM COLOR OX','RUN STAR HIKE PLATFORM COLOR OX',2990,'./storage/image/RUN STAR HIKE PLATFORM COLOR OX.jpg','2021-04-09',3),
+(6,'RUN STAR HIKE PLATFORM COLOR HI','RUN STAR HIKE PLATFORM COLOR HI',3190,'./storage/image/RUN STAR HIKE PLATFORM COLOR HI.jpg','2021-04-25',3),
+(7,'ALL STAR CX PULL TAB OX','ALL STAR CX PULL TAB OX',3190,'./storage/image/ALL STAR CX PULL TAB OX.jpg','2021-01-01',3),
+(8,'ALL STAR CX PULL TAB HI','ALL STAR CX PULL TAB HI',3390,'./storage/image/ALL STAR CX PULL TAB HI.jpg','2021-01-15',3),
+(9,'ULTRABOOST 6.0 DNA X PARLEY SHOES','Every run is a chance to push your boundaries. We approach each version of the Ultraboost with the same mentality. These adidas running shoes are made with the oceans in mind. The adidas Primeknit upper is built with Primeblue, and the cage plus heel counter are made with recycled fishing nets. Wear these everyday trainers for a stroll along the boardwalk or while picking up trash on the shore.',6000,'./storage/image/ULTRABOOST 6.0 DNA X PARLEY SHOES.jpg','2021-04-05',2),
+(10,'ULTRABOOST 21 PRIMEBLUE SHOES','The definition of best never rests. When we dropped the first adidas Ultraboosts, they were the best running shoes we ever made. With each new update, we raise the bar. Now you get the cushioning you did not know you needed with the energy return you have always wanted. This version features 6% more Boost capsules and a supportive adidas Primeknit+ upper. It gives you an extra push of energy in each step that comes from the Linear Energy Push system, which offers forefoot and midfoot support.',6500,'./storage/image/ULTRABOOST 21 PRIMEBLUE SHOES.jpg','2021-04-30',2),
+(11,'SUPERSTAR THE SIMPSONS SQUISHEE SHOES','A Squishee-inspired design on the adidas Superstar shoes. A lace jewel honours the favourite beverage, and the sockliner calls out the Kwik-E-Mart. A transparent tongue completes the look.',3200,'./storage/image/SUPERSTAR THE SIMPSONS SQUISHEE SHOES.jpg','2021-04-17',2),
+(12,'ULTRABOOST 6.0 DNA SHOES','Every run is a chance to push your boundaries. We approach each version of the Ultraboost with the same mentality. These adidas running shoes are made with the oceans in mind. The adidas Primeknit upper is built with Primeblue, and the cage plus heel counter are made with recycled fishing nets. Wear these everyday trainers for a stroll along the boardwalk or while picking up trash on the shore.',6000,'./storage/image/ULTRABOOST 6.0 DNA SHOES.jpg','2021-04-14',2),
+(13,'Nike Air Max 95 SE','Nike Air Max 95 SE, taking inspiration from the human body and the aesthetics of \'90s track style, this shoe has an incredible combination of comfort. A style that everyone has to look at And an eco-friendly design, the unique side panels are made with recycled denim and mesh. Considered to now contain at least 20% recycled content by weight, the embroidered cork graphic on the tongue pays tribute to the plants used in the Air design. Visible designs in the heel and forefoot cushion every stride.',6100,'./storage/image/Nike Air Max 95 SE.jpg','2021-05-04',1),
+(14,'Nike Air Force 1 \'07 LV8','Nike Air Force 1 \'07 LV8, updated with the original \'82 shoe, inspired by basketball, with at least 20% recycled material by weight and a cork-based outsole. By adding a natural flair to the classic version we all know and love with a pomegranate pattern composed of plant dyes. Embroidered vegetation design And scientific infographics',3800,'./storage/image/Nike Air Force 1 \'07 LV8.jpg','2021-04-30',1),
+(15,'Air Jordan 1 Mid','The Air Jordan 1 Mid is inspired by the first AJ1 and gives retro Jordan fans the opportunity to follow in the footsteps of their greatness. Bright colors add clean parts of classic materials and add some freshness to familiar designs.',4200,'./storage/image/Air Jordan 1 Mid.jpg','2021-03-01',1),
+(16,'Nike Waffle One','Nike Waffle One put everything you love most in Nike\'s legendary running shoes together through innovative innovations. To create a new look for the iconic Waffle franchise, a new durable plastic heel headband delivers power While the transparent mesh mixed with dripping suede will keep you ready for the summer, the new springy midsole stands out with a classic chunky silhouette. And a revamped waffle outsole that offers unbelievable levels of support and traction until you try it.',3600,'./storage/image/Nike Waffle One.jpg','2021-05-05',1),
+(17,'ULTRABOOST 21 X PARLEY SHOES','Raise your own bar. That\'s what adidas did when we updated the legendary Ultraboost running shoes with even more energy-returning benefits than before. The responsive Boost midsole, foot-hugging upper and grippy yet flexible sole are still here. Now, a Linear Energy Push system gives extra propulsion to each step with increased forefoot and midfoot stiffness. This version is made using recycled materials, part of adidas commitment to help end plastic waste. This product is made with Primeblue, a high-performance recycled material made in part with Parley Ocean Plastic. 50% of the upper is textile, 92% of the textile is Primeblue yarn. No virgin polyester.',6500,'./storage/image/ULTRABOOST 21 X PARLEY SHOES.jpg','2021-04-30',2),
+(18,'AS DISRUPT CX STRETCH CANVAS HI','AS DISRUPT CX STRETCH CANVAS HI',4500,'./storage/image/AS DISRUPT CX STRETCH CANVAS HI.jpg','2021-05-05',3);
+
+INSERT INTO `Product_has_Size` VALUES (1,1),(2,1),(3,1),(4,1),(17,1),(18,1),(1,2),(2,2),(3,2),(5,2),(18,2),(4,3),(5,3),(3,4),(4,4),(6,4),
+(1,5),(3,6),(7,6),(8,7),(8,8),(9,8),(10,9),(11,10),(12,11),(13,12),(14,13),(15,14),(16,15);
 
 commit;
