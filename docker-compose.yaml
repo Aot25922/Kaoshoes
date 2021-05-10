@@ -36,6 +36,7 @@ services:
     ports:
       - "443:443"
       - "80:80"
+      - "4443:4443"
     depends_on:
       - nodejs
       - spring
