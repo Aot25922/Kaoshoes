@@ -26,6 +26,8 @@ services:
     container_name: int221-node.js
     image: ghcr.io/int221-31-33-43/kaofood_front-end:latest
     restart: always
+    ports:
+      - "8080:8080"
     networks:
       - int221-network
   web:
