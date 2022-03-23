@@ -1,37 +1,31 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-GRANT ALL ON *.* to 'int221'@'%' WITH GRANT OPTION;
-SET GLOBAL max_connections = 1000;
+-- -----------------------------------------------------
+-- Schema int221_kaoshoes
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `int221_kaoshoes` ;
 
 -- -----------------------------------------------------
--- Schema 9shoes
+-- Schema int221_kaoshoes
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `9shoes` ;
+CREATE SCHEMA IF NOT EXISTS `int221_kaoshoes` DEFAULT CHARACTER SET utf8 ;
+USE `int221_kaoshoes` ;
 
 -- -----------------------------------------------------
--- Schema 9shoes
+-- Table `int221_kaoshoes`.`Brand`
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `9shoes` DEFAULT CHARACTER SET utf8 ;
-USE `9shoes` ;
+DROP TABLE IF EXISTS `int221_kaoshoes`.`Brand` ;
 
--- -----------------------------------------------------
--- Table `9shoes`.`Brand`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `9shoes`.`Brand` ;
-
-CREATE TABLE IF NOT EXISTS `9shoes`.`Brand` (
+CREATE TABLE IF NOT EXISTS `int221_kaoshoes`.`Brand` (
   `BrandId` INT NOT NULL,
   `BrandName` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`BrandId`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `9shoes`.`Product`
+-- Table `int221_kaoshoes`.`Product`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9shoes`.`Product` ;
+DROP TABLE IF EXISTS `int221_kaoshoes`.`Product` ;
 
-CREATE TABLE IF NOT EXISTS `9shoes`.`Product` (
+CREATE TABLE IF NOT EXISTS `int221_kaoshoes`.`Product` (
   `ProductId` INT NOT NULL AUTO_INCREMENT,
   `ProductName` VARCHAR(45) NOT NULL,
   `Descript` VARCHAR(800) NOT NULL,
@@ -43,17 +37,17 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Product` (
   INDEX `fk_Menu_Category_idx` (`BrandId` ASC) VISIBLE,
   CONSTRAINT `fk_Menu_Category`
     FOREIGN KEY (`BrandId`)
-    REFERENCES `9shoes`.`Brand` (`BrandId`)
+    REFERENCES `int221_kaoshoes`.`Brand` (`BrandId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `9shoes`.`Size`
+-- Table `int221_kaoshoes`.`Size`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9shoes`.`Size` ;
+DROP TABLE IF EXISTS `int221_kaoshoes`.`Size` ;
 
-CREATE TABLE IF NOT EXISTS `9shoes`.`Size` (
+CREATE TABLE IF NOT EXISTS `int221_kaoshoes`.`Size` (
   `SizeId` INT NOT NULL,
   `SizeValue` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`SizeId`),
@@ -61,11 +55,11 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Size` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `9shoes`.`Product_has_Size`
+-- Table `int221_kaoshoes`.`Product_has_Size`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `9shoes`.`Product_has_Size` ;
+DROP TABLE IF EXISTS `int221_kaoshoes`.`Product_has_Size` ;
 
-CREATE TABLE IF NOT EXISTS `9shoes`.`Product_has_Size` (
+CREATE TABLE IF NOT EXISTS `int221_kaoshoes`.`Product_has_Size` (
   `ProductId` INT NOT NULL,
   `SizeId` INT NOT NULL,
   PRIMARY KEY (`ProductId`, `SizeId`),
@@ -73,16 +67,12 @@ CREATE TABLE IF NOT EXISTS `9shoes`.`Product_has_Size` (
   INDEX `fk_Menu_has_Size_Menu1_idx` (`ProductId` ASC) VISIBLE,
   CONSTRAINT `fk_Menu_has_Size_Menu1`
     FOREIGN KEY (`ProductId`)
-    REFERENCES `9shoes`.`Product` (`ProductId`)
+    REFERENCES `int221_kaoshoes`.`Product` (`ProductId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Menu_has_Size_Size1`
     FOREIGN KEY (`SizeId`)
-    REFERENCES `9shoes`.`Size` (`SizeId`)
+    REFERENCES `int221_kaoshoes`.`Size` (`SizeId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
