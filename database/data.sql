@@ -1,4 +1,4 @@
-USE `9shoes` ;
+USE `int221_kaoshoes` ;
 INSERT INTO `Brand` VALUES (1,'Nike'),(2,'Adidas'),(3,'Converse');
 
 INSERT INTO `Size` VALUES (1,'EU 40'),(2,'EU 40.5'),(3,'EU 41'),(4,'EU 41.5'),(5,'EU 42'),(6,'EU 42.5'),(7,'EU 43'),
